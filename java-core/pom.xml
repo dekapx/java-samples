@@ -12,6 +12,7 @@
         <java.version>11</java.version>
         <guava.version>28.1-jre</guava.version>
         <lombok.version>1.18.10</lombok.version>
+        <jool.version>0.9.14</jool.version>
         <jmockit.version>1.48</jmockit.version>
         <assertj-core.version>3.13.2</assertj-core.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -28,7 +29,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
-            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jool</artifactId>
+            <version>${jool.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jmockit</groupId>
