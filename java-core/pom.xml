@@ -9,12 +9,12 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>13</java.version>
         <guava.version>28.1-jre</guava.version>
         <lombok.version>1.18.10</lombok.version>
         <jool.version>0.9.14</jool.version>
         <jmockit.version>1.48</jmockit.version>
-        <assertj-core.version>3.13.2</assertj-core.version>
+        <assertj-core.version>3.14.0</assertj-core.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     </properties>
@@ -32,7 +32,7 @@
         </dependency>
         <dependency>
             <groupId>org.jooq</groupId>
-            <artifactId>jool</artifactId>
+            <artifactId>jool-java-8</artifactId>
             <version>${jool.version}</version>
         </dependency>
         <dependency>
@@ -56,8 +56,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>

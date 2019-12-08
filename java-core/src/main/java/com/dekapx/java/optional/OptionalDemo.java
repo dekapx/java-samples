@@ -7,20 +7,24 @@ import java.util.Optional;
 
 public class OptionalDemo {
     public static void main(String[] args) {
-        final String capacity = Optional.ofNullable(getCarWithArrtibutes())
+        String capacity = Optional.ofNullable(getCarWithAttributes())
                 .map(Car::getEngine)
                 .map(Engine::getCapacity)
                 .orElseThrow(() -> new IllegalArgumentException("Must not be null or empty."));
 
         System.out.println("Engine Capacity: " + capacity);
+        capacity = Optional.ofNullable(getCarWithoutAttributes())
+                .map(Car::getEngine)
+                .map(Engine::getCapacity)
+                .orElseThrow(() -> new IllegalArgumentException("Must not be null or empty."));
+        System.out.println("Engine Capacity: " + capacity);
     }
 
-    private static Car getCarWithArrtibutes() {
+    private static Car getCarWithAttributes() {
         return new Car(new Engine("1995 CC"));
     }
 
-    private static Car getCarWithoutArrtibutes() {
+    private static Car getCarWithoutAttributes() {
         return new Car(null);
     }
-
 }
