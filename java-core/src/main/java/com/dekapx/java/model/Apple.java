@@ -1,4 +1,4 @@
-package com.dekapx.java.basics;
+package com.dekapx.java.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
