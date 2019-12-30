@@ -46,6 +46,10 @@ public class FunctionNewObject {
         languages.forEach(print);
     }
 
+
+    private static void createObjectUsingTriFunction() {
+    }
+
     private static Consumer<Language> print = (language)
             -> System.out.println(language);
 }
