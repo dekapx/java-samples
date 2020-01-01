@@ -9,16 +9,19 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-
 public class StreamDemo {
     public static void main(String[] args) {
         final List<Order> orders = List.of(getOrder());
-        final Map<String, String> elements = orders.stream()
+        final Map<String, String> elements = transformToMap(orders);
+        printElements(elements);
+    }
+
+    private static Map<String, String> transformToMap(final List<Order> orders) {
+        return orders.stream()
                 .flatMap(i -> i.getItems()
                         .stream()
                         .map(j -> new AbstractMap.SimpleImmutableEntry<>(i.getType(), j.getName())))
                 .collect(Collectors.toMap(entry -> entry.getKey(), entry -> entry.getValue()));
-        printElements(elements);
     }
 
     private static void printElements(final Map<String, String> elements) {
