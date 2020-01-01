@@ -1,10 +1,10 @@
-package com.dekapx.java.basics;
+package com.dekapx.java.function;
 
 import com.dekapx.java.model.Dummy;
 
 import java.util.function.Supplier;
 
-public class ConsumerCreateInstanceDemo {
+public class SupplierCreateInstanceDemo {
     public static void main(String[] args) {
         exampleOne();
         exampleTwo();
