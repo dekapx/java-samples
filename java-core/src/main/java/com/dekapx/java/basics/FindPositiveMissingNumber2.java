@@ -10,26 +10,39 @@ import java.util.stream.IntStream;
  */
 public class FindPositiveMissingNumber2 {
     public static void main(String[] args) {
+        int[] input0 = {1, 3, 6, 4, 2};
         int[] input1 = {1, 3, 6, 4, 1, 2};
         int[] input2 = {1, 3, 6, 4, 5, 2, 8};
         int[] input3 = {1, 2, 3};
         int[] input4 = {-1, -3};
 
-        System.out.println(getMissingNumber(input1));
+        System.out.println(getMissingNumber(input4));
     }
 
     public static int getMissingNumber(int[] input) {
         int[] elements = IntStream.of(input).sorted().toArray();
 
         int missing = 1;
-        int counter = 1;
-        for (int i = 0; i < elements.length; i ++) {
-            if (isPositive(elements[i])) {
-                counter ++;
+        int counter = 0;
+        boolean isMissing = false;
+        boolean allNegative = true;
+        for (int i = 0; i < elements.length; i++) {
+            int current = elements[i];
+            if (isPositive(current)) {
+                counter++;
+                allNegative = false;
             }
-            if (counter != elements[i]) {
+            if (counter < current) {
+                isMissing = true;
                 missing = counter;
+                break;
             }
+        }
+
+        if (!isMissing && !allNegative) {
+            missing = elements[elements.length - 1] + 1;
+        } else {
+            missing = 1;
         }
 
         return missing;
