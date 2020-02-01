@@ -1,4 +1,6 @@
-package com.dekapx.java.basics;
+package com.dekapx.java.algorithms;
+
+import com.dekapx.java.basics.Test;
 
 import java.util.stream.IntStream;
 
@@ -10,12 +12,13 @@ import java.util.stream.IntStream;
  */
 public class FindPositiveMissingNumber1 {
     public static void main(String[] args) {
-        int[] input1 = {1, 3, 6, 4, 1, 2};
-        int[] input2 = {1, 3, 6, 4, 5, 2, 8};
-        int[] input3 = {1, 2, 3};
-        int[] input4 = {-1, -3};
+        int[] input0 = {1, 3, 6, 4, 5, 2, 8};   // Output: 7
+        int[] input1 = {1, 3, 6, 4, 1, 2};      // Output: 5
+        int[] input2 = {1, 2, 3};               // Output: 4
+        int[] input3 = {-1, -3};                // Output: 1
 
-        System.out.println(getMissingNumber(input1));
+        int missing = getMissingNumber(input0);
+        System.out.println(missing);
     }
 
     public static int getMissingNumber(int[] input) {
@@ -32,6 +35,16 @@ public class FindPositiveMissingNumber1 {
             }
         }
 
+        if (missing == -1) {
+            missing = elements[elements.length - 1] + 1;
+            while (true) {
+                if (!isPositive(missing)) {
+                    missing ++;
+                } else {
+                    break;
+                }
+            }
+        }
         return missing;
     }
 
