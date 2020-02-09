@@ -21,8 +21,8 @@ public class FindPositiveMissingNumber2 {
         System.out.println(missing);
     }
 
-    public static int getMissingNumber(int[] input) {
-        final int[] elements = IntStream.of(input).sorted().toArray();
+    public static int getMissingNumber(int[] A) {
+        final int[] elements = IntStream.of(A).sorted().toArray();
         final List<Integer> elementsChecked = new ArrayList<>();
 
         int missing = 1;
