@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <java.version>13</java.version>
+        <java.version>14</java.version>
         <guava.version>28.1-jre</guava.version>
         <lombok.version>1.18.10</lombok.version>
         <jool.version>0.9.14</jool.version>
