@@ -1,33 +1,28 @@
 package com.dekapx.java.basics;
 
-import lombok.SneakyThrows;
-
-import java.util.concurrent.TimeUnit;
-import java.util.stream.IntStream;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.function.Consumer;
 
 public class Test {
     public static void main(String[] args) {
-        Runnable runnable = () -> {
-            IntStream.range(0, 5).forEach(i -> System.out.println(i));
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        };
-        new Thread(runnable).start();
+        List<String> languages = Arrays.asList("Java", "Scala", "Kotlin", "Python", "Golang");
+        languages.forEach(l -> print.accept(l));
+
+        System.out.println();
+
+        languages.sort(Comparator.naturalOrder());
+        languages.forEach(print);
+
+        System.out.println();
+
+        languages.sort(Comparator.reverseOrder());
+        languages.forEach(print);
     }
 
-    private static void runnableExampleOne() {
-        Runnable runnable = new Runnable() {
-            @SneakyThrows
-            @Override
-            public void run() {
-                IntStream.range(0, 5).forEach(i -> System.out.println(i));
-                TimeUnit.SECONDS.sleep(1);
-            }
-        };
-
-        new Thread(runnable).start();
-    }
+    static Consumer<String> print = (l) -> {
+        System.out.print(l + " ");
+    };
 }

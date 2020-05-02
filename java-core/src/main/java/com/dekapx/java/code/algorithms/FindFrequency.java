@@ -1,4 +1,4 @@
-package com.dekapx.java.algorithms;
+package com.dekapx.java.code.algorithms;
 
 import java.util.Arrays;
 import java.util.List;

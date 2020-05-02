@@ -1,4 +1,4 @@
-package com.dekapx.java.algorithms;
+package com.dekapx.java.code.algorithms;
 
 public class FindTheMissingNumber {
     public static void main(String[] args) {

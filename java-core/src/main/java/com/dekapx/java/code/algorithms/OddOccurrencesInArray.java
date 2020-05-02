@@ -1,4 +1,4 @@
-package com.dekapx.java.algorithms;
+package com.dekapx.java.code.algorithms;
 
 /**
  * A non-empty array A consisting of N integers is given.

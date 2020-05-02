@@ -1,4 +1,4 @@
-package com.dekapx.java.algorithms;
+package com.dekapx.java.code.algorithms;
 
 /**
  * Find the duplicate numbers with their counts
