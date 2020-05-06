@@ -1,14 +1,14 @@
 package com.dekapx.java.model;
 
-public class Person {
+public class PersonVO {
     private String firstName;
     private String lastName;
     private String email;
 
-    public Person() {
+    public PersonVO() {
     }
 
-    public Person(String firstName, String lastName, String email) {
+    public PersonVO(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -28,7 +28,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person {" +
+        return "PersonVO {" +
                 "firstName =' " + firstName + '\'' +
                 ", lastName = '" + lastName + '\'' +
                 ", email = '" + email + '\'' +

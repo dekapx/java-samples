@@ -1,8 +1,10 @@
 package com.dekapx.java.model;
 
+import com.google.common.base.Objects;
+
 import java.util.Optional;
 
-public class Language {
+public class Language implements Comparable<Language> {
     private String name;
     private LanguageType type;
 
@@ -32,5 +34,23 @@ public class Language {
                 "name='" + name + '\'' +
                 ", type=" + Optional.ofNullable(type).orElse(LanguageType.UNKNOWN_TYPE) +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Language language = (Language) o;
+        return Objects.equal(name, language.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(name);
+    }
+
+    @Override
+    public int compareTo(Language other) {
+        return this.getName().compareTo(other.getName());
     }
 }
