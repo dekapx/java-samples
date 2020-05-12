@@ -15,7 +15,7 @@ import static java.util.Comparator.comparing;
 
 public class MultiPredicateSortFilterDistinct {
     public static void main(String[] args) {
-        List<Language> languages = getLanguagesByType(FUNCTIONAL);
+        List<Language> languages = getLanguagesByType(FUNCTIONAL, OBJECT_ORIENTED, SCRIPTING);
         languages.forEach(language -> System.out.println(language.getName() + " - " + language.getType()));
     }
 
