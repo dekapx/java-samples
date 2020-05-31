@@ -5,7 +5,7 @@ import com.dekapx.java.model.Engine;
 
 import java.util.Optional;
 
-public class OptionalDemo {
+public class OptionalNestedNullCheck {
     public static void main(String[] args) {
         String capacity = Optional.ofNullable(getCarWithAttributes())
                 .map(Car::getEngine)
