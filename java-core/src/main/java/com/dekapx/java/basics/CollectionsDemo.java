@@ -23,9 +23,8 @@ public class CollectionsDemo {
     }
 
     private static List<Language> getLanguagesByType(LanguageType... languageTypes) {
-        List<Language> languages = LanguageHelper.getLanguages();
         List<Predicate<Language>> allPredicates = allPredicates(languageTypes);
-        return languages.stream()
+        return LanguageHelper.getLanguages().stream()
                 .filter(allPredicates.stream().reduce(Predicate::or).orElse(t -> true))
                 .distinct()
                 .sorted(comparing(Language::getName))
