@@ -8,7 +8,9 @@ public class InvokeFunctionDemo {
         System.out.println(output);
     }
 
-    private static Function<String, String> func = (arg) -> "Hello ! " + arg;
+    private static Function<String, String> func = (arg) -> {
+        return "Hello ! " + arg;
+    };
 
     private static String invoke(String arg, Function<String, String> function) {
         return function.apply(arg);
