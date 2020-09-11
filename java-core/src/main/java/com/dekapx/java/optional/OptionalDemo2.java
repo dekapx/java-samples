@@ -7,10 +7,11 @@ public class OptionalDemo2 {
     private static final Optional<String> noValue = Optional.empty();
 
     public static void main(String[] args) {
-        verify1(Optional.empty());
-        verify2(Optional.of("Test"));
+//        verify1(Optional.empty());
+//        verify2(Optional.of("Test"));
         verify3(Optional.of("Test"));
-        verify4(Optional.empty());
+        verify3(Optional.of(null));
+//        verify4(Optional.empty());
     }
 
     private static void verify1(final Optional<String> optional) {
