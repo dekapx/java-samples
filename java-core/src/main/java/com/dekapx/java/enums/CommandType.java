@@ -30,9 +30,4 @@ public enum CommandType {
     public String toString() {
         return value;
     }
-
-    public static void main(String[] args) {
-        final String value = CommandType.CREATE_COMMAND.toString();
-        System.out.println(value);
-    }
 }
