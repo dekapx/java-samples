@@ -9,8 +9,10 @@ import java.util.stream.Collectors;
 public class StreamNewObject {
     public static void main(String[] args) {
         String[] array = {"Java", "Scala", "Python", "Kotlin", "Haskell", "GoLang"};
-        List<Language> languages = Arrays.stream(array).map(Language::new)
+        List<Language> languages = Arrays.stream(array)
+                .map(Language::new)
                 .collect(Collectors.toList());
+
         languages.stream()
                 .map(Language::getName)
                 .sorted(String::compareTo)
