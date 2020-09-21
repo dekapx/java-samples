@@ -9,7 +9,7 @@ public class ConsumerChaining {
 
     private static Consumer<String> printBefore = (arg)
             -> System.out.println(arg.length());
-    
+
     private static Consumer<String> printAfter = (arg)
             -> System.out.println(arg.toUpperCase());
 }
