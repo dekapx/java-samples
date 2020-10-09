@@ -1,6 +1,6 @@
-package com.dekapx.java.basics;
+package com.dekapx.java.util;
 
-public class AsciiCodes {
+public class CharCodes {
     public static void main(String[] args) {
         for (int i = 65; i < 91; i++) {
             char chr = (char) i;
