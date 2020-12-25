@@ -1,11 +1,10 @@
-package com.dekapx.java.designpatterns.behavioral.strategy.example;
+package com.dekapx.java.designpatterns.behavioral.strategy;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.assertj.core.api.Assertions.*;
 
 public class DuckTest {
     @Test

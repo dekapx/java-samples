@@ -1,4 +1,4 @@
-package com.dekapx.java.designpatterns.behavioral.strategy.example;
+package com.dekapx.java.designpatterns.behavioral.strategy;
 
 public class FlyNoWay implements FlyBehavior {
     @Override
