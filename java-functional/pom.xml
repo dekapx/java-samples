@@ -7,11 +7,15 @@
     <groupId>com.dekapx.java</groupId>
     <artifactId>java-functional</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
-        <java.version>14</java.version>
-        <guava.version>29.0-jre</guava.version>
-        <lombok.version>1.18.12</lombok.version>
+        <java.version>15</java.version>
+        <guava.version>30.1-jre</guava.version>
+        <lombok.version>1.18.16</lombok.version>
+        <junit-jupiter.version>5.7.0</junit-jupiter.version>
+        <assertj-core.version>3.18.1</assertj-core.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     </properties>
 
     <dependencies>
@@ -25,6 +29,18 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -37,6 +53,10 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
             </plugin>
         </plugins>
     </build>

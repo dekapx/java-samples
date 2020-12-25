@@ -1,8 +1,7 @@
 package com.dekapx.java.generics;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import static com.dekapx.java.generics.GenericMethod.arrayToList;
+import static com.dekapx.java.generics.GenericMethod.print;
 
 public class GenericArrayToList {
     public static void main(String[] args) {
@@ -11,13 +10,5 @@ public class GenericArrayToList {
 
         final String[] languages = {"Java", "Scala", "Kotlin"};
         print(arrayToList(languages));
-    }
-
-    private static <T> List<T> arrayToList(final T[] elements) {
-        return Arrays.stream(elements).collect(Collectors.toList());
-    }
-
-    private static <T> void print(final List<T> elements) {
-        elements.forEach(e -> System.out.print(e + " "));
     }
 }

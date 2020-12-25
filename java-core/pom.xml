@@ -9,12 +9,12 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <java.version>14</java.version>
-        <guava.version>29.0-jre</guava.version>
-        <lombok.version>1.18.12</lombok.version>
+        <java.version>15</java.version>
+        <guava.version>30.0-jre</guava.version>
+        <lombok.version>1.18.16</lombok.version>
         <jool.version>0.9.14</jool.version>
         <jmockit.version>1.49</jmockit.version>
-        <assertj-core.version>3.16.1</assertj-core.version>
+        <assertj-core.version>3.18.1</assertj-core.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     </properties>
