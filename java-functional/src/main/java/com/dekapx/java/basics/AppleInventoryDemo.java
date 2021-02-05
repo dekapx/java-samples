@@ -5,11 +5,12 @@ import com.dekapx.java.model.Color;
 
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 import static com.dekapx.java.model.Color.GREEN;
 import static com.dekapx.java.model.Color.PINK;
 import static com.dekapx.java.model.Color.RED;
+import static com.dekapx.java.util.StreamUtil.filterCollectionByAndPredicates;
+import static com.dekapx.java.util.StreamUtil.filterCollectionByOrPredicates;
 
 public class AppleInventoryDemo {
     public static void main(String[] args) {
@@ -18,18 +19,6 @@ public class AppleInventoryDemo {
                 List.of(colorPredicate(GREEN), weightPredicate(150))));
         printInventory(filterCollectionByOrPredicates(inventory,
                 List.of(colorPredicate(RED), colorPredicate(GREEN), colorPredicate(PINK))));
-    }
-
-    private static <T> List<T> filterCollectionByAndPredicates(final List<T> elements, final List<Predicate<T>> predicates) {
-        return elements.stream()
-                .filter(predicates.stream().reduce(apple -> true, Predicate::and))
-                .collect(Collectors.toList());
-    }
-
-    private static <T> List<T> filterCollectionByOrPredicates(final List<T> elements, final List<Predicate<T>> predicates) {
-        return elements.stream()
-                .filter(predicates.stream().reduce(apple -> false, Predicate::or))
-                .collect(Collectors.toList());
     }
 
     private static Predicate<Apple> colorPredicate(final Color color) {
