@@ -8,14 +8,14 @@ public class StreamUtil {
     public static <T> List<T> filterCollectionByAndPredicates(final List<T> elements, final List<Predicate<T>> predicates) {
         return elements.stream()
                 .filter(predicates.stream()
-                        .reduce(apple -> true, Predicate::and))
+                        .reduce(e -> true, Predicate::and))
                 .collect(Collectors.toList());
     }
 
     public static <T> List<T> filterCollectionByOrPredicates(final List<T> elements, final List<Predicate<T>> predicates) {
         return elements.stream()
                 .filter(predicates.stream()
-                        .reduce(apple -> false, Predicate::or))
+                        .reduce(e -> false, Predicate::or))
                 .collect(Collectors.toList());
     }
 }
