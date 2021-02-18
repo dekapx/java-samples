@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.dekapx.java.cleancode.CarInventory.getInventory;
+
 import static com.dekapx.java.cleancode.CarPredicates.brandPredicate;
 import static com.dekapx.java.cleancode.CarPredicates.fuelTypePredicate;
 import static com.dekapx.java.cleancode.CarPredicates.transmissionPredicate;
+
 import static com.dekapx.java.cleancode.FuelType.Diesel;
 import static com.dekapx.java.cleancode.FuelType.Electric;
 import static com.dekapx.java.cleancode.Transmission.Automatic;

@@ -3,7 +3,7 @@ package com.dekapx.java.cleancode;
 public class Example1 {
     public static void main(String[] args) {
         new Test("test").printLength();
-        new Test(null).printLength();
+//        new Test(null).printLength();
     }
 
     static class Test {
