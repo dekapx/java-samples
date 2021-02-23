@@ -10,15 +10,22 @@ import java.util.stream.Collectors;
 public class NestedCollectionStreams {
     public static void main(String[] args) {
         final List<String> apps = List.of("Word", "WordPed", "Excel");
-        System.out.println(filterApps(apps, "SheetUpdated"));
+        System.out.println(filterApps(apps, "FileUpdated"));
     }
 
+    // Option 1
     private static List<String> filterApps(List<String> apps, String eventName) {
+        List<EventSubscriber> eventSubscribers = getEventSubscribers();
         return apps.stream().
-                filter(app -> isSubscribedAppEvent(app, eventName))
+                filter(app -> eventSubscribers.stream()
+                        .filter(e -> e.getAppId().equals(app))
+                        .flatMap(e -> e.getAppEvents().stream())
+                        .filter(appEvent -> appEvent.getEventName().equals(eventName))
+                        .findAny().isPresent())
                 .collect(Collectors.toList());
     }
 
+    // Option 2
     private static boolean isSubscribedAppEvent(String app, String eventName) {
         List<EventSubscriber> eventSubscribers = getEventSubscribers();
 
