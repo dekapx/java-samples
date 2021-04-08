@@ -31,16 +31,13 @@ public class Example5 {
 
     private static List<Car> findCar(List<Car> inventory, String brand, FuelType fuelType) {
         return inventory.stream()
-                .filter(brandPredicate(brand)
-                        .and(fuelTypePredicate(fuelType)))
+                .filter(brandPredicate(brand).and(fuelTypePredicate(fuelType)))
                 .collect(Collectors.toList());
     }
 
     private static List<Car> findCar(List<Car> inventory, String brand, FuelType fuelType, Transmission transmission) {
         return inventory.stream()
-                .filter(brandPredicate(brand)
-                        .and(fuelTypePredicate(fuelType))
-                        .and(transmissionPredicate(transmission)))
+                .filter(brandPredicate(brand).and(fuelTypePredicate(fuelType)).and(transmissionPredicate(transmission)))
                 .collect(Collectors.toList());
     }
 }

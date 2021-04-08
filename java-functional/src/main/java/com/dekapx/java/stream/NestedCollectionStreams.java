@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class NestedCollectionStreams {
     public static void main(String[] args) {
         final List<String> apps = List.of("Word", "WordPed", "Excel");
-        System.out.println(filterApps(apps, "FileUpdated"));
+        System.out.println(filterApps(apps, "SheetCreated"));
     }
 
     // Option 1
