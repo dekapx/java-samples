@@ -18,4 +18,12 @@ public class StreamUtil {
                         .reduce(apple -> false, Predicate::or))
                 .collect(Collectors.toList());
     }
+
+    public static <T> boolean filterAnyMatch(final List<T> elements, final Predicate<T> predicate) {
+        return elements.stream().anyMatch(predicate);
+    }
+
+    public static <T> boolean filterNoneMatch(final List<T> elements, final Predicate<T> predicate) {
+        return elements.stream().noneMatch(predicate);
+    }
 }
