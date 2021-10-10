@@ -1,6 +1,6 @@
 package com.dekapx.java.quickstart;
 
-public class Test {
+public class StreamFindFirst {
     public static void main(String[] args) {
         
     }
