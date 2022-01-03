@@ -9,11 +9,12 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <java.version>16</java.version>
+        <java.version>17</java.version>
         <guava.version>31.0.1-jre</guava.version>
         <lombok.version>1.18.22</lombok.version>
-        <junit-jupiter.version>5.8.1</junit-jupiter.version>
-        <assertj-core.version>3.21.0</assertj-core.version>
+        <junit-jupiter.version>5.8.2</junit-jupiter.version>
+        <mockito-core.version>4.2.0</mockito-core.version>
+        <assertj-core.version>3.22.0</assertj-core.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     </properties>
@@ -35,6 +36,13 @@
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>

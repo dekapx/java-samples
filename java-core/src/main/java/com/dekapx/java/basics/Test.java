@@ -1,26 +1,36 @@
 package com.dekapx.java.basics;
 
-@FunctionalInterface
-interface Greeting {
-    void sayHello(String arg);
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Optional;
+
+@Getter
+@Setter
+class Car {
+    private Engine engine;
+}
+
+@Getter
+@Setter
+class Engine {
+    private String capacity;
 }
 
 public class Test {
     public static void main(String[] args) {
-        Greeting greeting = (arg) -> {
-            System.out.println("Hello ! " + arg);
-        };
-
-        Greeting greeting2 = (arg) -> {
-            for (int i = 0; i < 5; i ++) {
-                System.out.println("Hello ! " + arg);
-            }
-        };
-
-        useLambda(greeting2, "Sumit");
+        Car car = buildCar();
+        Optional.ofNullable(car)
+                .map(c -> c.getEngine())
+                .map(c -> car.getEngine().getCapacity())
+                .ifPresent(c -> System.out.println(c));
     }
 
-    private static void useLambda(Greeting greeting, String name) {
-        greeting.sayHello(name);
+    private static Car buildCar() {
+        Car car = new Car();
+        Engine engine = new Engine();
+        engine.setCapacity("1995 CC");
+        car.setEngine(engine);
+        return car;
     }
 }

@@ -11,7 +11,6 @@ public class HelloWorld {
 
     public static void main(String[] args) {
         HelloWorld helloWorld = new HelloWorld();
-        System.out.println(helloWorld.sayHello("DeKapx"));;
+        System.out.println(helloWorld.sayHello("DeKapx"));
     }
 }
-
