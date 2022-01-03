@@ -1,4 +1,4 @@
-package com.dekapx.java.quickstart;
+package com.dekapx.java.basics;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

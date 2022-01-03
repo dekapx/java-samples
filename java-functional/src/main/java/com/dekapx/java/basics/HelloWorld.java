@@ -1,4 +1,4 @@
-package com.dekapx.java.quickstart;
+package com.dekapx.java.basics;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static java.util.Objects.nonNull;

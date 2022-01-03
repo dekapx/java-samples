@@ -1,4 +1,4 @@
-package com.dekapx.java.quickstart;
+package com.dekapx.java.basics;
 
 import java.util.Collections;
 import java.util.List;
