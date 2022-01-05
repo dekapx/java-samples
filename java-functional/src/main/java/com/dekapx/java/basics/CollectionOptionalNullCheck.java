@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public class CollectionOptionalNullCheck {
     public static void main(String[] args) {
-        final List<String> list = List.of("Java", "Scala", "Kotlin", "GOLang");
+        final List<String> elements = List.of("Java", "Scala", "Kotlin", "GOLang");
         System.out.println(getFirstElement(Collections.emptyList()));
     }
 
