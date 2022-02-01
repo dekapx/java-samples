@@ -1,4 +1,4 @@
-package com.dekapx.java.basics;
+package com.dekapx.java.newfeatures;
 
 import com.dekapx.java.model.Student;
 

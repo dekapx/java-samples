@@ -1,4 +1,4 @@
-package com.dekapx.java.basics;
+package com.dekapx.java.newfeatures;
 
 sealed interface FileWriter permits CsvWriter, TextWriter{
     void write();
