@@ -1,4 +1,4 @@
-package optional;
+package com.dekapx.java.optional;
 
 import java.util.Collections;
 import java.util.List;
