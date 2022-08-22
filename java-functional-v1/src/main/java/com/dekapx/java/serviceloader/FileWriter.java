@@ -1,5 +1,6 @@
 package com.dekapx.java.serviceloader;
 
-public interface FileWriter {
+public sealed interface FileWriter
+        permits CsvFileWriter, TextFileWriter, XmlFileWriter {
     void write(String contents);
 }

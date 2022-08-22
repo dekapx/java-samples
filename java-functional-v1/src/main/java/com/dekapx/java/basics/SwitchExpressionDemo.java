@@ -16,10 +16,10 @@ public class SwitchExpressionDemo {
         System.out.println(getLanguageType(JAVA));
         System.out.println(getLanguageType(SCALA));
         System.out.println(getLanguageType(PYTHON));
-        System.out.println(getLanguageType(KOTLIN));
+//        System.out.println(getLanguageType(KOTLIN));
     }
 
-    private static LanguageType getLanguageType(Language language) {
+    private static LanguageType getLanguageType(final Language language) {
         LanguageType languageType = switch (language) {
             case JAVA -> OBJECT_ORIENTED;
             case SCALA, HASKELL -> FUNCTIONAL;
