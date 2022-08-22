@@ -1,4 +1,4 @@
-package com.dekapx.java.basics;
+package com.dekapx.java.features;
 
 public class TextBlocksDemo {
     public static void main(String[] args) {

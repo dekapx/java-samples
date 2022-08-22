@@ -1,4 +1,4 @@
-package com.dekapx.java.basics;
+package com.dekapx.java.features;
 
 import com.dekapx.java.model.Language;
 import com.dekapx.java.model.LanguageType;
