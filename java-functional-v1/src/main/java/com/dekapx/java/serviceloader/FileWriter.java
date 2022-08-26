@@ -6,6 +6,6 @@ package com.dekapx.java.serviceloader;
  * ServiceLoader: locate and load service providers that implement a given service
  */
 public sealed interface FileWriter
-        permits CsvFileWriter, TextFileWriter, XmlFileWriter {
+        permits CsvFileWriter, TextFileWriter, XmlFileWriter, JsonFileWriter {
     void write(String contents);
 }
