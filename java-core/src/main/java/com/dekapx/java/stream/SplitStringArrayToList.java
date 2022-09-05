@@ -10,6 +10,8 @@ public class SplitStringArrayToList {
         final String[] tokens = {"Java", "Scala", "Python", "Kotlin", "Ruby"};
         final Stream<String> stream = Arrays.stream(tokens);
 
+
+
         final List<String> languages = stream
                 .map(language -> language.split(","))
                 .flatMap(Arrays::stream)

@@ -17,8 +17,7 @@ public class OptionalDemo {
         String capacity = Optional.ofNullable(car)
                 .map(Car::getEngine)
                 .map(Engine::getCapacity)
-                .orElse("N/A");
-
+                .orElse("No value present");
         System.out.println("Capacity: " + capacity);
     }
 }
