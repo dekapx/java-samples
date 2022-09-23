@@ -8,7 +8,7 @@ public class ProjectExplorer implements Editor {
     private final List<Viewer> viewers = new ArrayList<>();
 
     @Override
-    public void registerViewer(Viewer viewer) {
+    public void addViewer(Viewer viewer) {
         viewers.add(viewer);
     }
 
@@ -18,9 +18,13 @@ public class ProjectExplorer implements Editor {
     }
 
     @Override
-    public void notifyViewer() {
+    public void openFile(FileType fileType) {
+        notifyViewers(fileType);
+    }
+
+    public void notifyViewers(FileType fileType) {
         viewers.forEach(viewer -> {
-            viewer.refreshView();
+            viewer.refreshView(fileType);
         });
     }
 }

@@ -1,9 +1,9 @@
 package com.dekapx.java.designpatterns.observer;
 
 public interface Editor {
-    void registerViewer(Viewer viewer);
+    void addViewer(Viewer viewer);
 
     void removeViewer(Viewer viewer);
 
-    void notifyViewer();
+    void openFile(FileType fileType);
 }
