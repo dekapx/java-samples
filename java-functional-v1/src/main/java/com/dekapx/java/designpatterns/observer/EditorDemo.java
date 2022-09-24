@@ -11,9 +11,15 @@ public class EditorDemo {
         editor.addViewer(fileViewer);
         editor.addViewer(outlineViewer);
         editor.addViewer(propertyViewer);
-        editor.notifyViewers(new FileType("HelloWorld", ""));
+        editor.openFile(getFileType("HelloWorld", ".java"));
         System.out.println("After removal...");
         editor.removeViewer(propertyViewer);
-        editor.notifyViewers();
+        editor.openFile(getFileType("pom", ".xml"));
     }
+
+    private static FileType getFileType(String fileName, String extension) {
+        return new FileType(fileName, extension);
+    }
+
+
 }
