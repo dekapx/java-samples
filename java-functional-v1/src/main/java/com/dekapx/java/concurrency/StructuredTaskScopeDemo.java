@@ -17,7 +17,7 @@ public class StructuredTaskScopeDemo {
         try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
             Future<String> helloFuture = scope.fork(() -> invokeHello());
             Future<String> worldFuture = scope.fork(() -> invokeWorld());
-            
+
             scope.join();
             scope.throwIfFailed();
 
