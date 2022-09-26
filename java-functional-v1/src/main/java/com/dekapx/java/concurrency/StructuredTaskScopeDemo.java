@@ -1,16 +1,21 @@
 package com.dekapx.java.concurrency;
 
-import jdk.incubator.concurrent.StructuredTaskScope;
-
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
+//import jdk.incubator.concurrent.StructuredTaskScope;
+//import java.util.StringJoiner;
+//import java.util.concurrent.ExecutionException;
+//import java.util.concurrent.Future;
 
 record HelloWorld(String arg1, String arg2) {}
 
 public class StructuredTaskScopeDemo {
+    /**
     public static void main(String[] args) throws Exception {
         HelloWorld helloWorld = invokeHelloWorld();
-        System.out.println(helloWorld.arg1() + helloWorld.arg2());
+        String output = new StringJoiner(" ")
+                .add(helloWorld.arg1())
+                .add(helloWorld.arg2())
+                .toString();
+        System.out.println(output);
     }
 
     private static HelloWorld invokeHelloWorld() throws InterruptedException, ExecutionException {
@@ -33,6 +38,5 @@ public class StructuredTaskScopeDemo {
 
     private static String invokeWorld() {
         return "World";
-    }
-
+    }   **/
 }
