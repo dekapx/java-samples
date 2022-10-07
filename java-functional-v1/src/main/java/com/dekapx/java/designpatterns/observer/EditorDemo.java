@@ -21,6 +21,4 @@ public class EditorDemo {
     private static FileType getFileType(String fileName, String extension) {
         return new FileType(fileName, extension);
     }
-
-
 }
