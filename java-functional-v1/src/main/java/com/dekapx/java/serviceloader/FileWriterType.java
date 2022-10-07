@@ -1,5 +1,5 @@
 package com.dekapx.java.serviceloader;
 
 public enum FileWriterType {
-    CSV, TEXT, XML;
+    CSV, TEXT, XML, JSON;
 }
