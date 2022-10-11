@@ -5,5 +5,11 @@ public class SwapValues {
         int x = 5;
         int y = 7;
         System.out.println(String.format("x: %d, y: %d", x, y));
+
+        x = (x + y);
+        y = (x - y);
+        x = (x - y);
+
+        System.out.println(String.format("x: %d, y: %d", x, y));
     }
 }
