@@ -11,6 +11,6 @@ public class StreamPartitioningByDemo {
                 .mapToObj(Integer::new)
                 .collect(Collectors.partitioningBy(i -> i > 5));
 
-        map.forEach();
+        map.forEach((key, value) -> System.out.println(key + ": " + value));
     }
 }

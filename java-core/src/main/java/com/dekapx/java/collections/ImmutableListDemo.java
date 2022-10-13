@@ -13,7 +13,7 @@ public class ImmutableListDemo {
     }
 
     private static void immutableUsingCollections() {
-        final List<String> numbers = Collections.unmodifiableList(Arrays.asList("One", "Two", "Three"));
+        final List<String> numbers = List.of("One", "Two", "Three");
         print(numbers);
     }
 
