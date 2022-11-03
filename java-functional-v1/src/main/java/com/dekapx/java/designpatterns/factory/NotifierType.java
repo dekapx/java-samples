@@ -1,5 +1,7 @@
 package com.dekapx.java.designpatterns.factory;
 
+import static com.dekapx.java.designpatterns.factory.BeanUtils.createInstance;
+
 public enum NotifierType {
     EMAIL {
         @Override
@@ -15,12 +17,4 @@ public enum NotifierType {
     };
 
     public abstract Notifier build();
-
-    private static <T> T createInstance(Class<T> clazz) {
-        try {
-            return clazz.getDeclaredConstructor().newInstance();
-        } catch (Exception e) {
-            throw new RuntimeException("Unable to create instance...");
-        }
-    }
 }
