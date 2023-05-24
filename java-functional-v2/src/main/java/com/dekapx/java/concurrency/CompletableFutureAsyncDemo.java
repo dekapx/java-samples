@@ -1,4 +1,4 @@
-package concurrency;
+package com.dekapx.java.concurrency;
 
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
