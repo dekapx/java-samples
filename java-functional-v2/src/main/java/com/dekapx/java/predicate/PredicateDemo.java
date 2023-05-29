@@ -3,6 +3,7 @@ package com.dekapx.java.predicate;
 import com.dekapx.java.model.Car;
 
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -25,8 +26,12 @@ public class PredicateDemo {
                 .filter(bodyTypeSaloonPredicate.and(fuelTypeElectricPredicate))
                 .collect(Collectors.toList());
 
-        electricSaloons.forEach(System.out::println);
+        electricSaloons.forEach(displayCar);
     }
+
+    private static Consumer<Car> displayCar = (car) ->
+            System.out.println(car);
+
 
     private static List<Car> getInventory() {
         return List.of(

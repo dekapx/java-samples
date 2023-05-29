@@ -6,6 +6,7 @@ import com.dekapx.java.model.FuelType;
 
 import java.util.List;
 import java.util.function.BiPredicate;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import static com.dekapx.java.model.BodyType.SALOON;
@@ -28,8 +29,11 @@ public class BiPredicateDemo {
                         && fuelTypePredicate.test(car, ELECTRIC))
                 .collect(Collectors.toList());
 
-        electricSaloons.forEach(System.out::println);
+        electricSaloons.forEach(displayCar);
     }
+
+    private static Consumer<Car> displayCar = (car) ->
+            System.out.println(car);
 
     private static List<Car> getInventory() {
         return List.of(
