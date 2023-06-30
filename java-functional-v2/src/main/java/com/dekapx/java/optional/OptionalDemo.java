@@ -23,7 +23,6 @@ public class OptionalDemo {
 
     private static Person buildPersonModel() {
         Car car = new Car("BMW", "X5", SUV, HYBRID);
-//        return new Person("Dummy", "Person", Optional.of(car));
-        return new Person("Dummy", "Person", Optional.empty());
+        return new Person("Dummy", "Person", Optional.of(car));
     }
 }
