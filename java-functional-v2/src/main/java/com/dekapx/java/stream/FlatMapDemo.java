@@ -5,15 +5,16 @@ import com.dekapx.java.model.Student;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class FlatMapDemo {
     public static void main(String[] args) {
-        List<String> cities = getCities(getStudents());
-        cities.forEach(System.out::println);
+//        List<String> cities = getCities(getStudents());
+//        cities.forEach(System.out::println);
 
-        Map<String, List<Address>> addressesByCity = getAddressesByCity(getStudents());
-        addressesByCity.entrySet().forEach(entry -> System.out.println(entry.getKey() + " " + entry.getValue()));
+        Map<String, Long> addressesByCity = getCityCount(getStudents());
+        addressesByCity.entrySet().forEach(entry -> System.out.println(entry.getKey() + " [" + entry.getValue() + "]"));
     }
 
     private static List<String> getCities(List<Student> students) {
@@ -25,11 +26,13 @@ public class FlatMapDemo {
                 .collect(Collectors.toList());
     }
 
-    private static Map<String, List<Address>> getAddressesByCity(List<Student> students) {
+    private static Map<String, Long> getCityCount(List<Student> students) {
         return students.stream()
                 .map(Student::getAddresses)
                 .flatMap(addresses -> addresses.stream())
-                .collect(Collectors.groupingBy(Address::getCity));
+                .map(Address::getCity)
+                .sorted()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
 
