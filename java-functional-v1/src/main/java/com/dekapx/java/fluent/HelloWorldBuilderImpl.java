@@ -10,8 +10,7 @@ public class HelloWorldBuilderImpl implements HelloWorldBuilder {
     }
 
     @Override
-    public void printHello() {
-        HelloWorld helloWorld = new HelloWorldImpl();
-        System.out.println(helloWorld.sayHello(this.arg));
+    public String sayHello() {
+        return "Hello ! " + arg;
     }
 }
