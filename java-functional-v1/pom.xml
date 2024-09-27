@@ -11,12 +11,12 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <java.version>21</java.version>
-        <lombok.version>1.18.32</lombok.version>
-        <junit-jupiter.version>5.10.2</junit-jupiter.version>
-        <mockito-core.version>5.11.0</mockito-core.version>
+        <java.version>23</java.version>
+        <lombok.version>1.18.34</lombok.version>
+        <junit-jupiter.version>5.11.0</junit-jupiter.version>
+        <mockito-core.version>5.13.0</mockito-core.version>
         <mockito-inline.version>5.2.0</mockito-inline.version>
-        <assertj-core.version>3.25.3</assertj-core.version>
+        <assertj-core.version>3.26.3</assertj-core.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.1.0</maven-surefire-plugin.version>
     </properties>
@@ -66,8 +66,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
+                    <source>23</source>
+                    <target>23</target>
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
