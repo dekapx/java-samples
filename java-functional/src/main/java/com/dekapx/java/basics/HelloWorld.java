@@ -1,11 +1,13 @@
 package com.dekapx.java.basics;
 
-import static com.google.common.base.Preconditions.checkArgument;
+import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
 public class HelloWorld {
     public String sayHello(String arg) {
-        checkArgument(nonNull(arg), "Argument must not be null...");
+        if (isNull(arg)) {
+            throw new IllegalArgumentException("Argument must not be null...");
+        }
         return "Hello ! " + arg;
     }
 
