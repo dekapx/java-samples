@@ -11,7 +11,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <java.version>24</java.version>
+        <java.version>25</java.version>
         <lombok.version>1.18.38</lombok.version>
         <junit-jupiter.version>5.13.4</junit-jupiter.version>
         <mockito-core.version>5.19.0</mockito-core.version>
