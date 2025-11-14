@@ -10,6 +10,8 @@ import lombok.Getter;
 public class Car {
     private String make;
     private String model;
-    private int year;
     private FuelType fuelType;
+    private String color;
+    private Integer mileage;
+    private int year;
 }
