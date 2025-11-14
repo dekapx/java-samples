@@ -1,4 +1,4 @@
-package com.dekapx.java.basics.lambdas;
+package com.dekapx.java.lambdas;
 
 @FunctionalInterface
 public interface HelloWorld {

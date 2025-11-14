@@ -1,18 +1,18 @@
 package com.dekapx.java.basics;
 
-import com.dekapx.java.basics.lambdas.HelloWorld;
+import com.dekapx.java.lambdas.HelloWorld;
 
 public class Test {
     static void main(String[] args) {
-        HelloWorld helloWorld = helloWorldBuilder();
-        helloWorldExecutor(helloWorld, "World");
+        HelloWorld helloWorld = prepare();
+        execute(helloWorld, "World");
     }
 
-    private static HelloWorld helloWorldBuilder() {
+    private static HelloWorld prepare() {
         return name -> "Hello, " + name + "!";
     }
 
-    private static void helloWorldExecutor(HelloWorld helloWorld, String name) {
+    private static void execute(HelloWorld helloWorld, String name) {
         String message = helloWorld.sayHello(name);
         System.out.println(message);
     }
