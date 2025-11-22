@@ -1,1 +1,3 @@
 com.dekapx.java.writer.CsvFileWriter
+com.dekapx.java.writer.TextFileWriter
+com.dekapx.java.writer.XmlFileWriter
