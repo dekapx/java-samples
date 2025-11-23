@@ -2,7 +2,7 @@ package com.dekapx.java.model;
 
 import static com.dekapx.java.utils.BeanUtils.createInstance;
 
-public enum FileWriterType {
+public enum FileType {
     CSV {
         @Override
         public FileWriter build() {

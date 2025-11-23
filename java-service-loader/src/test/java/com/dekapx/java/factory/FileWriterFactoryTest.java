@@ -2,7 +2,7 @@ package com.dekapx.java.factory;
 
 import com.dekapx.java.writer.CsvFileWriter;
 import com.dekapx.java.writer.FileWriter;
-import com.dekapx.java.writer.FileWriterType;
+import com.dekapx.java.writer.FileType;
 import com.dekapx.java.writer.TextFileWriter;
 import com.dekapx.java.writer.XmlFileWriter;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,8 +12,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class FileWriterFactoryTest {
     @ParameterizedTest
-    @EnumSource(FileWriterType.class)
-    public void shouldReturnFileWriterInstanceForGivenFileWriterType(FileWriterType type) {
+    @EnumSource(FileType.class)
+    public void shouldReturnFileWriterInstanceForGivenFileType(FileType type) {
         FileWriter writer = FileWriterFactory.getFileWriter(type);
         assertThat(writer)
                 .isNotNull()

@@ -2,9 +2,9 @@ package com.dekapx.java.client;
 
 import com.dekapx.java.factory.FileWriterFactory;
 
-import static com.dekapx.java.writer.FileWriterType.CSV;
-import static com.dekapx.java.writer.FileWriterType.TEXT;
-import static com.dekapx.java.writer.FileWriterType.XML;
+import static com.dekapx.java.writer.FileType.CSV;
+import static com.dekapx.java.writer.FileType.TEXT;
+import static com.dekapx.java.writer.FileType.XML;
 
 public class FileWriterClient {
     public static void main(String[] args) {

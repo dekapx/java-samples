@@ -1,6 +1,6 @@
 package com.dekapx.java.writer;
 
-public enum FileWriterType {
+public enum FileType {
     CSV,
     TEXT,
     XML;
