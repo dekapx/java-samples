@@ -11,18 +11,23 @@ import java.util.List;
 public class ArrayToListConversion {
     static void main() {
         String[] languages = {"Java", "Python", "JavaScript", "C#", "C++"};
-        toList(languages).forEach(System.out::println);
+        printList(toList(languages));
 
         Integer[] marks = {85, 90, 78, 92, 88};
-        toList(marks).forEach(System.out::println);
+        printList(toList(marks));
 
         Shape[] shapes = {new Circle(), new Rectangle()};
-        toList(shapes).forEach(System.out::println);
+        printList(toList(shapes));
     }
 
     private static <T> List<T> toList(T[] array) {
         List<T> list = new ArrayList<>();
         Arrays.stream(array).forEach(list::add);
         return list;
+    }
+
+    private static <T> void printList(List<T> list) {
+        list.forEach(System.out::println);
+        System.out.println("-------------------");
     }
 }

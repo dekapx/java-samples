@@ -13,9 +13,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class FileWriterFactoryTest {
     @ParameterizedTest
     @EnumSource(FileWriterType.class)
-    public void testGetFileWriter(FileWriterType type) {
-        FileWriterFactory factory = new FileWriterFactory();
-        FileWriter writer = factory.getFileWriter(type);
+    public void shouldReturnFileWriterInstanceForGivenFileWriterType(FileWriterType type) {
+        FileWriter writer = FileWriterFactory.getFileWriter(type);
         assertThat(writer)
                 .isNotNull()
                 .isInstanceOfAny(

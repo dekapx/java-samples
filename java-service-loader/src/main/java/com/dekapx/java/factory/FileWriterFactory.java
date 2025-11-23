@@ -11,7 +11,9 @@ import static com.dekapx.java.writer.FileWriterType.CSV;
 import static com.dekapx.java.writer.FileWriterType.TEXT;
 import static com.dekapx.java.writer.FileWriterType.XML;
 
-public class FileWriterFactory {
+public final class FileWriterFactory {
+    private FileWriterFactory() {}
+
     private static Map<FileWriterType, String> writerTypeMap = Map.of(
             CSV, "CsvFileWriter",
             TEXT, "TextFileWriter",
@@ -22,7 +24,7 @@ public class FileWriterFactory {
         return o -> o.get().getClass().getSimpleName().equals(writerTypeMap.get(type));
     }
 
-    public FileWriter getFileWriter(FileWriterType type) {
+    public static FileWriter getFileWriter(FileWriterType type) {
         ServiceLoader<FileWriter> serviceLoader = ServiceLoader.load(FileWriter.class);
         return serviceLoader.stream()
                 .filter(serviceProviderPredicate(type))
