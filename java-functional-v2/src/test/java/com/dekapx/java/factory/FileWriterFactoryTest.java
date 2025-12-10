@@ -21,15 +21,10 @@ public class FileWriterFactoryTest {
     }
 
     private Class<?> expectedClassFor(FileType type) {
-        switch (type) {
-            case CSV:
-                return CsvFileWriter.class;
-            case TEXT:
-                return TextFileWriter.class;
-            case XML:
-                return XmlFileWriter.class;
-            default:
-                throw new IllegalStateException("Unhandled FileWriterType: " + type);
-        }
+        return switch (type) {
+            case CSV -> CsvFileWriter.class;
+            case TEXT -> TextFileWriter.class;
+            case XML -> XmlFileWriter.class;
+        };
     }
 }
