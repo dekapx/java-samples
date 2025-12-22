@@ -4,6 +4,8 @@ import com.dekapx.java.model.Address;
 import com.dekapx.java.model.Person;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StreamFlatMapDemo {
     static void main() {
@@ -14,6 +16,18 @@ public class StreamFlatMapDemo {
                 .map(Address::getCity)
                 .toList();
         IO.println(cities);
+
+        Map<String, List<String>> cityByPerson = persons
+                .stream()
+                .collect(Collectors.toMap(
+                        person -> person.getFirstName() + " " + person.getLastName(),
+                        person -> person.getAddresses()
+                                .stream()
+                                .map(Address::getCity)
+                                .collect(Collectors.toList())
+                ));
+        IO.println(cityByPerson);
+
     }
 
     private static List<Person> getPerson() {
@@ -37,7 +51,7 @@ public class StreamFlatMapDemo {
                                 Address.builder()
                                         .houseNo("456")
                                         .street("Oak St")
-                                        .city("Metropolis")
+                                        .city("Dublin")
                                         .state("NY")
                                         .zipCode("10001")
                                         .build(),
