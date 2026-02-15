@@ -5,7 +5,7 @@ import java.util.List;
 
 public class UserService {
     public List<User> loadUsers() {
-        System.out.println("Loading users from DB...");
+        System.out.println("Loading all users from DB...");
         List<User> users = new ArrayList<>();
         users.add(User.builder()
                 .id(1L)
