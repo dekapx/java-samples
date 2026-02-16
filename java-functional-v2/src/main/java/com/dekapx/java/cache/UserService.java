@@ -17,16 +17,14 @@ public class UserService {
                         .id(2L)
                         .name("Jane Smith")
                         .email("Jane.Smith@google.com")
-                        .build());
+                        .build(),
+                User.builder()
+                        .id(3L)
+                        .name("Bob Johnson")
+                        .email("Bob.Johnson@microsoft.com")
+                        .build()
+        );
         return users;
-    }
-
-    private void simulateSlowOperation() {
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
     }
 
     public User loadUser(Long aLong) {
@@ -35,5 +33,13 @@ public class UserService {
                 .name("John Doe")
                 .email("John.Doe@outlook.com")
                 .build();
+    }
+
+    private void simulateSlowOperation() {
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }
