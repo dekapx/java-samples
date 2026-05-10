@@ -21,14 +21,16 @@ public class BulkPostClient {
                 "{\"sensorId\": \"Sensor-105\",\"temperature\": 27.0,\"humidity\": 58.0,\"windSpeed\": 12.0, \"timestamp\": \"2025-10-05T22:15:41.400Z\"}"
         );
 
-        IntStream.rangeClosed(0, 100).forEach(i -> {
-            List<CompletableFuture<String>> futures = payloads.stream()
-                    .map(p -> postAsync(ENDPOINT, p))
-                    .toList();
+        List<CompletableFuture<String>> allFutures = IntStream.rangeClosed(0, 100)
+                .mapToObj(i -> payloads.stream()
+                        .map(p -> postAsync(ENDPOINT, p))
+                        .toList())
+                .flatMap(List::stream)
+                .toList();
 
-            CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
-        });
+        CompletableFuture.allOf(allFutures.toArray(new CompletableFuture[0])).join();
 
+        allFutures.forEach(future -> System.out.println(future.join()));
     }
 
     public static CompletableFuture<String> postAsync(String url, String jsonBody) {
