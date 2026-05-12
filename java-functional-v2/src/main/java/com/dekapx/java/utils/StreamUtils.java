@@ -1,5 +1,7 @@
 package com.dekapx.java.utils;
 
+import org.jspecify.annotations.NonNull;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
@@ -14,13 +16,18 @@ public class StreamUtils {
             return source;
         }
 
-        Predicate<T> combinedPredicate = predicates
-                .stream()
-                .filter(Objects::nonNull)
-                .reduce(x -> true, Predicate::and);
+        Predicate<T> combinedPredicate = getCombinedPredicate(predicates);
         return source
                 .stream()
                 .filter(combinedPredicate)
                 .toList();
+    }
+
+    private static <T> @NonNull Predicate<T> getCombinedPredicate(List<Predicate<T>> predicates) {
+        Predicate<T> combinedPredicate = predicates
+                .stream()
+                .filter(Objects::nonNull)
+                .reduce(x -> true, Predicate::and);
+        return combinedPredicate;
     }
 }
