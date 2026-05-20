@@ -2,6 +2,7 @@ package com.dekapx.java.concurrency;
 
 import com.dekapx.java.model.Item;
 import com.dekapx.java.model.Order;
+import com.dekapx.java.model.OrderStatus;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -13,7 +14,10 @@ public class CompletionStageDemo {
     private static ExecutorService executorService  = Executors.newFixedThreadPool(5);
     static void main() {
         try {
+            // complete the stage with create order
             CompletionStage<Order> completionStage = CompletableFuture.completedStage(createOrder());
+
+            // complete order and process order asynchronously
             CompletableFuture<String> resultFuture = completionStage
                     .thenApplyAsync(order -> processOrder(order), executorService)
                     .toCompletableFuture();
@@ -25,15 +29,15 @@ public class CompletionStageDemo {
     }
 
     private static Order createOrder() {
-        Order order = Order.builder()
+        return Order.builder()
                 .orderId(1L)
                 .items(List.of(Item.builder()
                         .itemId(1L)
                         .itemName("Item 1")
                         .price(10.0)
                         .build()))
+                .orderStatus(OrderStatus.NEW)
                 .build();
-        return order;
     }
 
     private static String processOrder(Order order) {
