@@ -1,5 +1,7 @@
 package com.dekapx.java.coding.problems;
 
+import org.jspecify.annotations.NonNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -38,6 +40,8 @@ public class RoboBuilder {
     private static String required_parts_1 = "sensors,case,speaker,wheels";
     private static String required_parts_2 = "sensors,case,speaker,wheels,claw";
     private static String required_parts_3 = "sensors,case,screws";
+    private static final String UNDERSCORE = "_";
+
 
     static void main() {
         List<String> robots1 = get_robots(all_parts, required_parts_1);
@@ -50,21 +54,18 @@ public class RoboBuilder {
         System.out.println(robots3);
     }
 
-    private static List<String> get_robots(String[] allParts, String requiredParts) {
-        Set<String> requiredPartsSet = Arrays
-                .stream(requiredParts.split(","))
-                .collect(Collectors.toSet());
-
-        List<String> robots = new ArrayList<>();
+    public static List<String> get_robots(String[] allParts, String requiredParts) {
         Map<String, Set<String>> robotParts = new HashMap<>();
 
         for (String part : allParts) {
-            String robotName = part.split("_")[0];
-            String partName = part.split("_")[1];
+            String robotName = part.split(UNDERSCORE)[0];
+            String partName = part.split(UNDERSCORE)[1];
 
             robotParts.computeIfAbsent(robotName, k -> new HashSet<>()).add(partName);
         }
 
+        Set<String> requiredPartsSet = getRequiredPartsSet(requiredParts);
+        List<String> robots = new ArrayList<>();
         robotParts.forEach((robotName, parts) -> {
             if (parts.containsAll(requiredPartsSet)) {
                 robots.add(robotName);
@@ -72,5 +73,11 @@ public class RoboBuilder {
         });
 
         return robots;
+    }
+
+    private static @NonNull Set<String> getRequiredPartsSet(String requiredParts) {
+        return Arrays
+                .stream(requiredParts.split(","))
+                .collect(Collectors.toSet());
     }
 }
