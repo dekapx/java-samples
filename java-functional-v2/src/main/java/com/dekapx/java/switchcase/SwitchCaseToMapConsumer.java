@@ -30,18 +30,18 @@ public class SwitchCaseToMapConsumer {
     }
 
     private Consumer<Double> cashPayment = (amount) -> {
-        System.out.println("Making cash payment");
+        System.out.println("Making cash payment: $" + amount);
     };
 
     private Consumer<Double> creditCardPayment = (amount) -> {
-        System.out.println("Making credit card payment");
+        System.out.println("Making credit card payment: $" + amount);
     };
 
     private Consumer<Double> debitCardPayment = (amount) -> {
-        System.out.println("Making debit card payment");
+        System.out.println("Making debit card payment: $" + amount);
     };
 
     private Consumer<Double> paypalPayment = (amount) -> {
-        System.out.println("Making PayPal payment");
+        System.out.println("Making PayPal payment: $" + amount);
     };
 }
