@@ -15,16 +15,7 @@ public class CalculatorImpl implements Calculator {
     private int operand2;
     private MathOperation operation;
 
-    private CalculatorImpl(int operand1, int operand2, MathOperation operation) {
-        this.operand1 = operand1;
-        this.operand2 = operand2;
-        this.operation = operation;
-    }
-
-    public CalculatorImpl() {
-    }
-
-    private static final Map<MathOperation, BiFunction<Integer, Integer, Integer>> MATH_OPERATIONS = Map.of(
+    private final Map<MathOperation, BiFunction<Integer, Integer, Integer>> MATH_OPERATIONS = Map.of(
             ADDITION, new Addition(),
             SUBTRACTION, new Subtraction(),
             MULTIPLICATION, new Multiplication(),
@@ -53,34 +44,4 @@ public class CalculatorImpl implements Calculator {
     public int calculate() {
         return MATH_OPERATIONS.get(operation).apply(operand1, operand2);
     }
-
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public static class Builder {
-        private int operand1;
-        private int operand2;
-        private MathOperation operation;
-
-        public Builder operand1(int operand1) {
-            this.operand1 = operand1;
-            return this;
-        }
-
-        public Builder operand2(int operand2) {
-            this.operand2 = operand2;
-            return this;
-        }
-
-        public Builder operation(MathOperation operation) {
-            this.operation = operation;
-            return this;
-        }
-
-        public CalculatorImpl build() {
-            return new CalculatorImpl(operand1, operand2, operation);
-        }
-    }
-
 }
