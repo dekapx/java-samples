@@ -15,7 +15,7 @@ public class StreamFlatMapDemo {
                 .flatMap(person -> person.getAddresses().stream())
                 .map(Address::getCity)
                 .toList();
-        IO.println(cities);
+        System.out.println(cities);
 
         Map<String, List<String>> cityByPerson = persons
                 .stream()
@@ -26,7 +26,7 @@ public class StreamFlatMapDemo {
                                 .map(Address::getCity)
                                 .collect(Collectors.toList())
                 ));
-        IO.println(cityByPerson);
+        System.out.println(cityByPerson);
 
     }
 
