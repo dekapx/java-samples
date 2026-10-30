@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class CaffeineCacheManager2 {
+public class CaffeineCacheManagerDemo {
     private static final Cache<Long, User> cache = Caffeine.newBuilder()
             .initialCapacity(100)
             .maximumSize(1_000)
@@ -17,7 +17,7 @@ public class CaffeineCacheManager2 {
             .recordStats()
             .build();
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         UserService userService = new UserService();
         List<User> users = userService.loadUsers();
 

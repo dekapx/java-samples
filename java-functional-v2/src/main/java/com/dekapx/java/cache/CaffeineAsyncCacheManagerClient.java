@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
-public class UserClient {
-    static void main() {
-        CaffeineCacheManager cacheManager = new CaffeineCacheManager();
+public class CaffeineAsyncCacheManagerClient {
+    public static void main(String[] args) {
+        CaffeineAsyncCacheManager cacheManager = new CaffeineAsyncCacheManager();
 
         IntStream.range(0, 10).forEach(i -> {
             List<User> users = cacheManager.getUsers();

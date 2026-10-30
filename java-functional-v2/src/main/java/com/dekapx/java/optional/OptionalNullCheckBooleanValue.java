@@ -58,7 +58,7 @@ public class OptionalNullCheckBooleanValue {
                 .name("Toyota")
                 .model("Yaris")
                 .engine(Engine.builder()
-                        .type("V6")
+                        .type("V2")
                         .capacity(1.6)
                         .build())
                 .build();
