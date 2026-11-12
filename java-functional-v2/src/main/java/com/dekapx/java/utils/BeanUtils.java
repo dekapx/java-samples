@@ -13,7 +13,7 @@ public class BeanUtils {
         }
     }
 
-    public static <T> T createInstanceWithArgs(Class<T> clazz, Object... args) {
+    public static <T> T createInstance(Class<T> clazz, Object... args) {
         Class<T> checkedClazz = Optional.ofNullable(clazz)
                 .orElseThrow(() -> new IllegalArgumentException("Class type cannot be null..."));
         try {
