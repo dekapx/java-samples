@@ -4,7 +4,7 @@ import com.dekapx.java.model.MathOperation;
 
 public interface Calculator {
     static Calculator create() {
-        return new CalculatorImpl();
+        return CalculatorImpl.create();
     }
     Calculator operand1(int operand1);
     Calculator operand2(int operand2);

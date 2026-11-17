@@ -22,7 +22,11 @@ public class CalculatorImpl implements Calculator {
             DIVISION, new Division()
     );
 
-    CalculatorImpl() {
+    private CalculatorImpl() {
+    }
+
+    public static Calculator create() {
+        return new CalculatorImpl();
     }
 
     @Override
