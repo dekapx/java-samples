@@ -9,7 +9,7 @@ public class CalculatorImplTest {
 
     @Test
     void shouldReturnSumForAddition() {
-        Calculator calculator = new CalculatorImpl()
+        Calculator calculator = Calculator.create()
                 .operand1(10)
                 .operand2(5)
                 .operation(MathOperation.ADDITION);
@@ -18,7 +18,7 @@ public class CalculatorImplTest {
 
     @Test
     void shouldReturnDifferenceForSubtraction() {
-        Calculator calculator = new CalculatorImpl()
+        Calculator calculator = Calculator.create()
                 .operand1(10)
                 .operand2(5)
                 .operation(MathOperation.SUBTRACTION);
@@ -27,7 +27,7 @@ public class CalculatorImplTest {
 
     @Test
     void shouldReturnProductForMultiplication() {
-        Calculator calculator = new CalculatorImpl()
+        Calculator calculator = Calculator.create()
                 .operand1(10)
                 .operand2(5)
                 .operation(MathOperation.MULTIPLICATION);
@@ -36,7 +36,7 @@ public class CalculatorImplTest {
 
     @Test
     void shouldReturnQuotientForDivision() {
-        Calculator calculator = new CalculatorImpl()
+        Calculator calculator = Calculator.create()
                 .operand1(10)
                 .operand2(5)
                 .operation(MathOperation.DIVISION);

@@ -22,6 +22,9 @@ public class CalculatorImpl implements Calculator {
             DIVISION, new Division()
     );
 
+    CalculatorImpl() {
+    }
+
     @Override
     public CalculatorImpl operand1(int operand1) {
         this.operand1 = operand1;
